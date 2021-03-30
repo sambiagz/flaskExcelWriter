@@ -1,0 +1,6 @@
+werkzeug
+flask
+pandas
+xlsxwriter
+xlrd
+openpyxl
