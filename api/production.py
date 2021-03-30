@@ -10,7 +10,7 @@ worksheet = workbook.add_worksheet()
 
 
 def create_row(file_name):
-    df = pd.read_excel(file_name, sheet_name="DataBase")
+    df = pd.read_excel(file_name, sheet_name="DataBase", engine='openpyxl')
     if(df["PipeNumber"][0]):
         print("Generating Row")
         columns = df.columns.append(df.columns)
@@ -44,7 +44,8 @@ def write_file(files):
             except:
                 print("Error Occured: File is Production")
 
-            df = pd.read_excel(file_path, sheet_name="DataBase")
+            df = pd.read_excel(
+                file_path, sheet_name="DataBase", engine='openpyxl')
             columns = df.columns.append(df.columns)
 
             # WRITE HEADERS
